@@ -1,0 +1,29 @@
+.card{
+    width: 60rem;
+    float: center;
+}
+.bord{
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ a:hover{
+    color: rgb(95, 88, 88);
+}
+.round{
+    color:green;
+}
+.pagi{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+.orange{
+    background-color: orange;
+}
+.bord{
+    background-color:rgb(155, 80, 155);
+}

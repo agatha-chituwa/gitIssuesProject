@@ -1,0 +1,11 @@
+.card{
+    /* width: 18rem; */
+    padding: 150px, 150px;
+   
+  }
+  .nav-link{
+      color: black;
+  }
+  li{
+      text-decoration: none;
+  }
