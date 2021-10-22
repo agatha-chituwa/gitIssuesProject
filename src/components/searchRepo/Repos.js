@@ -15,8 +15,7 @@ function Repos(html_url) {
     const [name, setName] = useState([]);
     const [url, setUrl] = useState([]);
     const [count, setCount] = useState([]);
-    const [currentPage, setCurrentPage] = useState([1]);
-    const [itemsPerPage, setItemsPerPage] = useState([2]);
+
 
     // const pages = [] ;
     // for(let i; i<=Math.ceil(name.length/itemsPerPage); i++){
@@ -40,7 +39,7 @@ function Repos(html_url) {
 
     async function getRepos(url = `https://api.github.com/search/issues?q=alltype:issuesis:open`){
         try {
-            // const url = `https://api.github.com/search/issues?q=alltype:issuesis:open`;     
+            // const url = `https://api.github.com/search/issues?q=alltype:issuesis:open&per_page=100`;     
             // result.items.forEach(i => console.log(i.full_name));
          const headers ={
           // "authorization": `basic ${btoa(`${userName}:${password}`)}`
