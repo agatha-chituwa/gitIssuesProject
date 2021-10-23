@@ -6,8 +6,7 @@ import { Link, Router, Switch } from 'react-router-dom';
 import Moment from 'react-moment'
 import AdjustIcon from '@mui/icons-material/Adjust';
 import CheckIcon from '@mui/icons-material/Check';
-import Pagination from '@mui/material/Pagination';
-import Typography from '@mui/material/Typography';
+
 
 
 
@@ -27,15 +26,6 @@ function Repos(html_url) {
     //     <li>{page}</li>
     //   )
     // })
-    
-
-    const [page, setPage] = React.useState(1);
-    const handleChange = (event, value) => {
-      setPage(value);
-    };
-
- 
-
 
     async function getRepos(url = `https://api.github.com/search/issues?q=alltype:issuesis:open`){
         try {
@@ -123,10 +113,6 @@ function Repos(html_url) {
     {/* <Pagination/> */}
      
 </div>
-<Typography>Page: {page}</Typography>
-{url.map(i => (
-      <Pagination className="pagi" page={page} count={10} onClick={(e) => getRepos(i.urll)} onChange={handleChange} />
-      ))}
 
 
 {url.map(i => (
