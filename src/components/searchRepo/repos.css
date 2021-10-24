@@ -2,6 +2,7 @@
     width: 60rem;
     float: center;
 }
+
 .bord{
     font-weight: bold;
 }
@@ -26,4 +27,8 @@ a{
 }
 .bord{
     background-color:rgb(155, 80, 155);
+}
+.centr{
+   display: flex;
+   justify-content: center;
 }

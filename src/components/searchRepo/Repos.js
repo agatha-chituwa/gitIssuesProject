@@ -6,6 +6,7 @@ import { Link, Router, Switch } from 'react-router-dom';
 import Moment from 'react-moment'
 import AdjustIcon from '@mui/icons-material/Adjust';
 import CheckIcon from '@mui/icons-material/Check';
+import Filter from './Filter'
 
 
 
@@ -14,6 +15,7 @@ function Repos(html_url) {
     const [name, setName] = useState([]);
     const [url, setUrl] = useState([]);
     const [count, setCount] = useState([]);
+    const [isShown, setIsShown] = useState({display: 'none'});
 
 
     // const pages = [] ;
@@ -63,6 +65,9 @@ function Repos(html_url) {
 
     };
 
+    function change(e){
+      e.target.style.background = 'red';
+    }
 
 
 
@@ -91,10 +96,12 @@ function Repos(html_url) {
   ))}
 </div> */}
 {/* <Link to={`//${i.html_url}`} > */}
+<Filter/>
+
+<br/>
+<br/>
 
 <div class=" col d-flex justify-content-center">
-  
-    
 <div class="card" >
   <div class="card-header">
   <AdjustIcon/> {count.total_count} Open <CheckIcon/> 0 closed
@@ -102,7 +109,9 @@ function Repos(html_url) {
   {name.map(i => (
   <ul class="list-group list-group-flush" key={i.id}>
      
-   <li class="list-group-item"> <AdjustIcon className="round"/> <a href={`${i.html_url}`} > {i.html_url}  </a> <span className="bord"> {i.title} </span> <br/>
+   <li class="list-group-item"> <AdjustIcon className="round"/> <a href={`${i.html_url}`}
+ 
+   > {i.html_url}  </a> <span className="bord"> {i.title} </span> <br/>
      <p className="small"> <small>   #{i.number} opened <Moment fromNow ago date={i.created_at}/> ago by  {i.user.login}   </small> </p>
   
      </li>
@@ -114,11 +123,15 @@ function Repos(html_url) {
      
 </div>
 
-
+<div className="centr">
 {url.map(i => (
 <button className="orange"  onClick={(e) => getRepos(i.urll)}>{i.title}</button>
 
   ))}
+</div>
+
+  
+
 
 
         </div>

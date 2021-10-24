@@ -4,7 +4,7 @@ function IssueEntry() {
   
   async function getRepos(type){
     try {
-        const url = `https://api.github.com/search/issues?q=alltype:issuesis:${type}&per_page=100`;     
+        const url = `https://api.github.com/search/issues?q=alltype:issuesis:${type}`;     
         // result.items.forEach(i => console.log(i.full_name));
      const headers ={
       // "authorization": `basic ${btoa(`${userName}:${password}`)}`

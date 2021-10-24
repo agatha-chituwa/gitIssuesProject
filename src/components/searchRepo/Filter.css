@@ -1,0 +1,10 @@
+.btn-toolbar{
+    display: flex;
+   justify-content: center;
+   
+  
+}
+.btn-group{
+    width: 19rem;
+    border-radius: 20px;
+}
