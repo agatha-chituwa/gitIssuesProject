@@ -53,11 +53,12 @@ function Repos(html_url) {
             title: a.split(";") [1]
           }
         });
+        // const input = result.items[0].repository_url;
+        //  const [first, second] = input.split('repos/');
+        //  console.log(second);
+        
         setUrl(urls);
-
-         
-       
-          
+  
         } catch (error) {
             console.log(error);
             
@@ -65,21 +66,13 @@ function Repos(html_url) {
 
     };
 
-    function change(e){
-      e.target.style.background = 'red';
-    }
-
-
-
-
- 
-
-    
-    
+  
     useEffect(() => {
     getRepos();
  
     }, []);
+
+
  
   
 
@@ -111,7 +104,7 @@ function Repos(html_url) {
      
    <li class="list-group-item"> <AdjustIcon className="round"/> <a href={`${i.html_url}`}
  
-   > {i.html_url}  </a> <span className="bord"> {i.title} </span> <br/>
+   > {i.repository_url}  </a> <span className="bord"> {i.title} </span> <br/>
      <p className="small"> <small>   #{i.number} opened <Moment fromNow ago date={i.created_at}/> ago by  {i.user.login}   </small> </p>
   
      </li>

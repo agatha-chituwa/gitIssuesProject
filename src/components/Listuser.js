@@ -14,10 +14,20 @@ function Listuser() {
     useEffect(() => {
         fetch('https://api.github.com/users/agatha-chituwa')
           .then (res => res.json())
-          .then (data => 
-            setData(data)
-            )
+          .then (data => {
+            setData(data);
+            })
       }, []);
+      
+      const setData = ({name, login, followers, following, public_repos, avater_url}) => {
+        setName(name);
+        setUsername(login);
+        setFollowers(followers);
+        setFollowing(following);
+        setRepos(public_repos);
+        setAvater(avater_url)
+      }
+
       const handleSearch = (e) => {
         setUserInput(e.target.value)
       }
@@ -29,15 +39,9 @@ function Listuser() {
             
             )
       }
+      
     
-      const setData = ({name, login, followers, following, public_repos, avater_url}) => {
-        setName(name);
-        setUsername(login);
-        setFollowers(followers);
-        setFollowing(following);
-        setRepos(public_repos);
-        setAvater(avater_url)
-      }
+    
 
     return (
         <div>
@@ -45,11 +49,11 @@ function Listuser() {
     <div classNameName="App">
        
 
-        <form onSubmit={handlesubmit} classNameName="form">
+        <form onSubmit={handlesubmit} className="form">
          
            <input type="text" placeholder='search' name= 'github user' value={userInput} onChange={handleSearch} />
            
-           <input type="submit" value="" />
+           {/* <input type="submit" value="" /> */}
             
         </form>
 
